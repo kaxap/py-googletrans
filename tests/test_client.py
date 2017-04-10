@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from pytest import raises
 
-from googletrans import Translator
+from googletranslate import Translator
 
 
 def test_bind_multiple_service_urls():

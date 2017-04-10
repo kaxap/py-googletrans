@@ -5,8 +5,8 @@ __version__ = '.'.join(str(v) for v in __version_info__)
 
 
 import os
-from googletrans.client import Translator
-from googletrans.constants import LANGUAGES
+from googletranslate.client import Translator
+from googletranslate.constants import LANGUAGES
 
 config_path = os.path.expanduser('~/.googletrans')
 if not os.path.isfile(config_path):

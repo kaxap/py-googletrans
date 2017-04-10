@@ -7,11 +7,11 @@ You can translate text using this module.
 import requests
 import random
 
-from googletrans import urls, utils
-from googletrans.compat import PY3
-from googletrans.gtoken import TokenAcquirer
-from googletrans.constants import DEFAULT_USER_AGENT, LANGUAGES, SPECIAL_CASES
-from googletrans.models import Translated, Detected
+from googletranslate import urls, utils
+from googletranslate.compat import PY3
+from googletranslate.gtoken import TokenAcquirer
+from googletranslate.constants import DEFAULT_USER_AGENT, LANGUAGES, SPECIAL_CASES
+from googletranslate.models import Translated, Detected
 
 
 EXCLUDES = ('en', 'ca', 'fr')
@@ -95,7 +95,7 @@ class Translator(object):
         :rtype: :class:`list` (when a list is passed)
 
         Basic usage:
-            >>> from googletrans import Translator
+            >>> from googletranslate import Translator
             >>> translator = Translator()
             >>> translator.translate('안녕하세요.')
             <Translated src=ko dest=en text=Good evening. pronunciation=Good evening.>
@@ -168,7 +168,7 @@ class Translator(object):
         :rtype: :class:`list` (when a list is passed)
 
         Basic usage:
-            >>> from googletrans import Translator
+            >>> from googletranslate import Translator
             >>> translator = Translator()
             >>> translator.detect('이 문장은 한글로 쓰여졌습니다.')
             <Detected lang=ko confidence=0.27041003>

@@ -3,5 +3,5 @@ from pytest import fixture
 
 @fixture
 def translator():
-    from googletrans import Translator
+    from googletranslate import Translator
     return Translator()

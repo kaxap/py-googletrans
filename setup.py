@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import googletrans
+import googletranslate
 import os.path
 from setuptools import setup, find_packages
 
@@ -16,14 +16,14 @@ def readme():
 
 def install():
     setup(
-        name='googletrans',
-        version=googletrans.__version__,
-        description=googletrans.__doc__,
+        name='googletranslate',
+        version=googletranslate.__version__,
+        description=googletranslate.__doc__,
         long_description=readme(),
         license='MIT',
-        author='SuHun Han',
-        author_email='ssut' '@' 'ssut.me',
-        url='https://github.com/ssut/py-googletrans',
+        author='weaming',
+        author_email='garden.yuen' '@' 'gmail.com',
+        url='https://github.com/weaming/py-googletrans',
         classifiers=['Development Status :: 5 - Production/Stable',
                      'Intended Audience :: Education',
                      'Intended Audience :: End Users/Desktop',

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from googletrans import gtoken
+from googletranslate import gtoken
 from pytest import fixture
 
 
