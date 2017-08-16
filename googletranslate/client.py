@@ -83,8 +83,7 @@ class Translator(object):
         r = self.session.get(url, params=params)
         
         if r.ok:
-            data = utils.format_json(r.text)
-            return data
+            return r.json()
         else:
             return None
 
