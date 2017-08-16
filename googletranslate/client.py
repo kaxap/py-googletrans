@@ -30,11 +30,21 @@ class Translator(object):
     :type user_agent: :class:`str`
     """
 
-    def __init__(self, service_urls=None, user_agent=DEFAULT_USER_AGENT):
+    def __init__(self, service_urls=None, user_agent=DEFAULT_USER_AGENT, proxy=None):
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': user_agent,
         })
+        
+        # add proxy
+        if proxy:
+            host_and_port = proxy.split(':')
+            self.session.proxies = {
+                "http": "http://{}:{}".format(*host_and_port),
+                "https": "http://{}:{}".format(*host_and_port)
+            }
+
+        
         self.service_urls = service_urls or ['translate.google.com']
         self.token_acquirer = TokenAcquirer(session=self.session, host=service_urls[0])
 
