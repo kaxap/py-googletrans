@@ -81,9 +81,12 @@ class Translator(object):
                                     token=token)
         url = urls.TRANSLATE.format(host=self._pick_service_url())
         r = self.session.get(url, params=params)
-
-        data = utils.format_json(r.text)
-        return data
+        
+        if r.ok:
+            data = utils.format_json(r.text)
+            return data
+        else:
+            return None
 
     def translate(self, text, dest='en', src='auto'):
         """Translate text from source language to destination language
@@ -131,6 +134,9 @@ class Translator(object):
 
         origin = text
         data = self._translate(text, dest, src)
+        
+        if data is None:
+            return None
 
         # this code will be updated when the format is changed.
         translated = ''.join([d[0] if d[0] else '' for d in data[0]])
