@@ -141,6 +141,16 @@ class Translator(object):
             src = data[-1][0][0]
         except Exception:  # pragma: nocover
             pass
+        
+        # add origin language and confidence score
+        origin_lang = None
+        origin_lang_confidence = None
+        try:
+            origin_lang = ''.join(data[8][0])
+            origin_lang_confidence = data[8][-2][0]
+        except Exception:  # pragma: nocover
+            pass
+
 
         pron = origin
         try:
@@ -163,7 +173,9 @@ class Translator(object):
 
         # put final values into a new Translated object
         result = Translated(src=src, dest=dest, origin=origin,
-                            text=translated, pronunciation=pron)
+                            text=translated, pronunciation=pron, 
+                            origin_lang=origin_lang,
+                            origin_lang_confidence=origin_lang_confidence)
 
         return result
 
