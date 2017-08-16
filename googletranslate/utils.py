@@ -50,8 +50,9 @@ def format_json(original):
 
     try:
         converted = json.loads(text)
-    except:
+    except Exception as e:
         print('could not parse response: "' + original + '"')
+        raise e
         
     return converted
 
