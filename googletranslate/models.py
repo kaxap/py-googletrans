@@ -7,12 +7,14 @@ class Translated(object):
     :param text: translated text
     :param pronunciation: pronunciation
     """
-    def __init__(self, src, dest, origin, text, pronunciation):
+    def __init__(self, src, dest, origin, text, pronunciation, origin_lang, origin_lang_confidence):
         self.src = src
         self.dest = dest
         self.origin = origin
         self.text = text
         self.pronunciation = pronunciation
+        self.origin_lang=origin_lang
+        self.origin_lang_confidence=origin_lang_confidence
 
     def __str__(self):  # pragma: nocover
         return self.__unicode__()
