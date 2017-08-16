@@ -48,7 +48,11 @@ def format_json(original):
             # use slicing to extract those parts of the original string to be kept
             text = text[:p] + states[j][1] + text[nxt:]
 
-    converted = json.loads(text)
+    try:
+        converted = json.loads(text)
+    except:
+        print('could not parse response: "' + original + '"')
+        
     return converted
 
 
